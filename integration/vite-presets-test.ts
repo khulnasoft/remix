@@ -116,7 +116,7 @@ const files = {
             }
           },
 
-          // Ensure presets can set serverBundles option (this is critical for Vercel support)
+          // Ensure presets can set serverBundles option (this is critical for Khulnasoft support)
           {
             name: "test-preset",
             remixConfig: async () => ({
@@ -126,7 +126,7 @@ const files = {
             }),
           },
 
-          // Ensure presets can set buildEnd option (this is critical for Vercel support)
+          // Ensure presets can set buildEnd option (this is critical for Khulnasoft support)
           {
             name: "test-preset",
             remixConfig: async () => ({

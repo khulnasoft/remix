@@ -130,7 +130,7 @@ Aside from the unholy amount of code in `node_modules`, our Remix app is just th
 
 ## Bring Your Own Server
 
-The `build/server` directory created by `remix vite:build` is just a module that you run inside a server like Express, Cloudflare Workers, Netlify, Vercel, Fastly, AWS, Deno, Azure, Fastify, Firebase, ... anywhere.
+The `build/server` directory created by `remix vite:build` is just a module that you run inside a server like Express, Cloudflare Workers, Netlify, Khulnasoft, Fastly, AWS, Deno, Azure, Fastify, Firebase, ... anywhere.
 
 If you don't care to set up your own server, you can use `remix-serve`. It's a simple express-based server maintained by the Remix team. However, Remix is specifically designed to run in _any_ JavaScript environment so that you own your stack. It is expected many —if not most— production apps will have their own server. You can read more about this in [Runtimes, Adapters, and Stacks][runtimes].
 

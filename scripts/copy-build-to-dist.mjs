@@ -36,7 +36,11 @@ async function copyBuildToDist() {
       build: buildDir,
       src: path.join(
         PACKAGES_PATH,
-        parentDir === "@remix-run" ? `remix-${dirName}` : dirName
+        parentDir === "@remix-run"
+          ? `remix-${dirName}`
+          : parentDir === "@khulnasoft"
+          ? `khulnasoft-${dirName}`
+          : dirName
       ),
     };
   });
@@ -90,8 +94,6 @@ async function copyBuildToDist() {
       "build/node_modules/@remix-run/dev/server-build.js",
       "packages/remix-dev/server-build.js",
     ],
-    // server-build.d.ts only built by tsc to dist/.  Copy outside of dist/
-    // both in build/ and packages/ dir
     ...(tsc
       ? [
           [
@@ -110,6 +112,21 @@ async function copyBuildToDist() {
           ],
         ]
       : []),
+
+    // `@khulnasoft/remix` stuffs. We want "server" to be placed at the root of the package.
+    ...[
+      "globals.js",
+      "globals.d.ts",
+      "server.js",
+      "server.d.ts",
+      "vite.js",
+      "vite.d.ts",
+    ].map((name) => {
+      return [
+        `build/node_modules/@khulnasoft/remix/dist/${name}`,
+        `packages/khulnasoft-remix/${name}`,
+      ];
+    }),
   ];
 
   oneOffCopies.forEach(([srcFile, destFile]) =>
@@ -124,6 +141,23 @@ async function copyBuildToDist() {
   );
 
   await Promise.all(copyQueue);
+
+  // For the Khulnasoft Remix Vite preset, the `Preset` type import needs to
+  // be adjusted, since in this monorepo it's written against the source,
+  // but consumers of the package will import for the `dist` compiled types.
+  let khulnasoftRemixViteTypesPath = "packages/khulnasoft-remix/vite.d.ts";
+  let khulnasoftRemixViteTypesData = await fse.readFile(
+    khulnasoftRemixViteTypesPath,
+    "utf8"
+  );
+  await fse.writeFile(
+    khulnasoftRemixViteTypesPath,
+    khulnasoftRemixViteTypesData.replace(
+      "@remix-run/dev/vite/plugin",
+      "@remix-run/dev/dist/vite/plugin"
+    )
+  );
+
   console.log(
     chalk.green(
       "  ✅ Successfully copied build files to package dist directories!"
@@ -145,10 +179,14 @@ async function getPackageBuildPaths(moduleRootDir) {
       if (!(await fse.stat(moduleDir)).isDirectory()) {
         continue;
       }
-      if (path.basename(moduleDir) === "@remix-run") {
+      if (
+        path.basename(moduleDir) === "@remix-run" ||
+        path.basename(moduleDir) === "@khulnasoft"
+      ) {
         packageBuilds.push(...(await getPackageBuildPaths(moduleDir)));
       } else if (
         /node_modules[/\\]@remix-run[/\\]/.test(moduleDir) ||
+        /node_modules[/\\]@khulnasoft[/\\]/.test(moduleDir) ||
         /node_modules[/\\]create-remix/.test(moduleDir) ||
         /node_modules[/\\]remix/.test(moduleDir)
       ) {

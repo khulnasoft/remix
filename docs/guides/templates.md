@@ -55,7 +55,7 @@ npx create-remix@latest --template remix-run/remix/templates/classic-remix-compi
 Some hosting providers maintain their own Remix templates. For more information, see their official integration guides listed below.
 
 - [Netlify][netlify_template_docs]
-- [Vercel][vercel_template_docs]
+- [Khulnasoft][khulnasoft_template_docs]
 
 ### Examples
 
@@ -167,7 +167,7 @@ After the init script has been run, the `remix.init` folder gets deleted, so you
 [remix_stack_topic]: https://github.com/topics/remix-stack
 [official_templates]: https://github.com/remix-run/remix/tree/main/templates
 [examples]: https://github.com/remix-run/examples
-[vercel_template_docs]: https://vercel.com/docs/frameworks/remix
+[khulnasoft_template_docs]: https://khulnasoft.com/docs/frameworks/remix
 [netlify_template_docs]: https://docs.netlify.com/integrations/frameworks/remix
 [arc]: https://arc.codes/docs/en/get-started/quickstart
 [deno]: https://deno.com

@@ -132,6 +132,7 @@
     "node": ">=18.0.0"
   },
   "files": [
+    "cli.js",
     "dist/",
     "compiler/shims/",
     "server-build.js",

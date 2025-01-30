@@ -2236,8 +2236,8 @@ Unfortunately, we didn't manage to get a deprecation warning on _every_ breaking
   - Integrate `manual` mode ([#7231](https://github.com/remix-run/remix/pull/7231))
   - Remove undocumented `createApp` Node API ([#7229](https://github.com/remix-run/remix/pull/7229))
   - Preserve dynamic imports in remix-serve for external bundle ([#7173](https://github.com/remix-run/remix/pull/7173))
-- `@remix-run/vercel`
-  - The [`@remix-run/vercel`](https://remix.run/docs/en/main/start/v2#vercel-adapter) adapter has been removed in favor of out of the box functionality provided by Vercel ([#7035](https://github.com/remix-run/remix/pull/7035))
+- `@remix-run/khulnasoft`
+  - The [`@remix-run/khulnasoft`](https://remix.run/docs/en/main/start/v2#khulnasoft-adapter) adapter has been removed in favor of out of the box functionality provided by Khulnasoft ([#7035](https://github.com/remix-run/remix/pull/7035))
 - `create-remix`
   - Stop passing `isTypeScript` to `remix.init` script ([#7099](https://github.com/remix-run/remix/pull/7099))
 - `remix`

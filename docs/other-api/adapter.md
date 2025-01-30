@@ -29,7 +29,7 @@ Each adapter has the same API. In the future we may have helpers specific to the
 - [`@mcansh/remix-raw-http`][remix-raw-http] - For a good old bare bones Node server.
 - [`@netlify/remix-adapter`][netlify-remix-adapter] - For [Netlify][netlify].
 - [`@netlify/remix-edge-adapter`][netlify-remix-edge-adapter] - For [Netlify][netlify] Edge.
-- [`@vercel/remix`][vercel-remix] - For [Vercel][vercel].
+- [`@khulnasoft/remix`][khulnasoft-remix] - For [Khulnasoft][khulnasoft].
 - [`remix-google-cloud-functions`][remix-google-cloud-functions] - For [Google Cloud][google-cloud-functions] and [Firebase][firebase-functions] functions.
 - [`partymix`][partymix] - For [PartyKit][partykit].
 - [`@scandinavianairlines/remix-azure-functions`][remix-azure-functions]: For [Azure Functions][azure-functions] and [Azure Static Web Apps][azure-static-web-apps].
@@ -149,8 +149,8 @@ addEventListener("fetch", (event) => {
 [netlify-remix-adapter]: https://github.com/netlify/remix-compute/tree/main/packages/remix-adapter
 [netlify-remix-edge-adapter]: https://github.com/netlify/remix-compute/tree/main/packages/remix-edge-adapter
 [netlify]: https://netlify.com
-[vercel-remix]: https://github.com/vercel/remix/blob/main/packages/vercel-remix
-[vercel]: https://vercel.com
+[khulnasoft-remix]: https://github.com/khulnasoft/remix/blob/main/packages/khulnasoft-remix
+[khulnasoft]: https://khulnasoft.com
 [partykit]: https://partykit.io
 [partymix]: https://github.com/partykit/partykit/tree/main/packages/partymix
 [remix-azure-functions]: https://github.com/scandinavianairlines/remix-azure-functions

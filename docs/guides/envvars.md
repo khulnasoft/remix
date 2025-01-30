@@ -68,7 +68,7 @@ Environment variables when deployed to production will be handled by your host, 
 - [Fly.io][fly-io]
 - [Cloudflare Pages][cloudflare-pages]
 - [Cloudflare Workers][cloudflare-workers]
-- [Vercel][vercel]
+- [Khulnasoft][khulnasoft]
 - [Architect][architect]
 
 ## Browser Environment Variables
@@ -164,6 +164,6 @@ Instead we recommend keeping all of your environment variables on the server (al
 [fly-io]: https://fly.io/docs/reference/secrets
 [cloudflare-pages]: https://developers.cloudflare.com/pages/platform/build-configuration/#environment-variables
 [cloudflare-workers]: https://developers.cloudflare.com/workers/platform/environment-variables
-[vercel]: https://vercel.com/docs/environment-variables
+[khulnasoft]: https://khulnasoft.com/docs/environment-variables
 [architect]: https://arc.codes/docs/en/reference/cli/env
 [dev-vars]: https://developers.cloudflare.com/pages/functions/bindings/#interact-with-your-environment-variables-locally

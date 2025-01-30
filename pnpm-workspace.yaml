@@ -24,3 +24,4 @@ packages:
   - "packages/remix-serve"
   - "packages/remix-server-runtime"
   - "packages/remix-testing"
+  - "packages/khulnasoft-remix"
