@@ -1,4 +1,4 @@
-const { execSync } = require("node:child_process");
+const { execFileSync } = require("node:child_process");
 const { readdir, stat } = require("node:fs/promises");
 const { join } = require("node:path");
 
@@ -31,7 +31,7 @@ const main = async (codemod) => {
       return;
     }
 
-    execSync(`node ${cliPath} codemod ${codemod} --force ${examplePath}`, {
+    execFileSync('node', [cliPath, 'codemod', codemod, '--force', examplePath], {
       stdio: "inherit",
     });
   });
